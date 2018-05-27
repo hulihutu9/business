@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 80011
 File Encoding         : 65001
 
-Date: 2018-05-27 20:58:49
+Date: 2018-05-27 21:20:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -42,3 +42,21 @@ CREATE TABLE `customer` (
 -- Records of customer
 -- ----------------------------
 INSERT INTO `customer` VALUES ('1', '100205', '青岛人人乐有限公司', '青岛海尔路35号', '0532-32341234', null, '王五', '15845675289', 'wangwu@126.com', '2123354', '光大银行青岛分行', '1233445', '宋学');
+
+-- ----------------------------
+-- Table structure for `user`
+-- ----------------------------
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `user_id` varchar(128) NOT NULL COMMENT '用户编号',
+  `name` varchar(20) NOT NULL COMMENT '用户名',
+  `roles` varchar(40) NOT NULL COMMENT '用户角色',
+  `password` varchar(32) NOT NULL COMMENT '密码',
+  PRIMARY KEY (`user_id`),
+  KEY `name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- ----------------------------
+-- Records of user
+-- ----------------------------
+INSERT INTO `user` VALUES ('11004567', 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3');
